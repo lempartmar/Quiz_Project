@@ -50,6 +50,15 @@ public class NextScene : MonoBehaviour
         Application.Quit();
     }
 
+    public void NextScene0()
+    {
+
+
+
+        Application.LoadLevel(0);
+
+    }
+
     public void RestartGame()
     {
 
