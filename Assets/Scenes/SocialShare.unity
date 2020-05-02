@@ -936,6 +936,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1561672230 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 733587315831995028, guid: 987f1d1e5c8920c48a3f16a4cd085d6f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1223391585}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1642371053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1285,9 +1297,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Panel_share: {fileID: 1793144122}
-  txtPanelScore: {fileID: 0}
-  txtHomeScore: {fileID: 0}
-  txtDate: {fileID: 0}
+  txtPanelScore: {fileID: 1561672230}
+  txtHomeScore: {fileID: 1739354476}
+  txtDate: {fileID: 1561672230}
 --- !u!4 &2080840964
 Transform:
   m_ObjectHideFlags: 0

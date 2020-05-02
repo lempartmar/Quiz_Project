@@ -44,6 +44,24 @@ public class NextScene : MonoBehaviour
         Application.LoadLevel(6);
     }
 
+    public void NextScene7()
+    {
+
+        Application.LoadLevel(7);
+    }
+
+    public void NextScene8()
+    {
+
+        Application.LoadLevel(8);
+    }
+
+    public void NextScene9()
+    {
+
+        Application.LoadLevel(9);
+    }
+
     public void ExitGame()
     {
 

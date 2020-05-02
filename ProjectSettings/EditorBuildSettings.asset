@@ -9,14 +9,23 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScene.unity
     guid: b36dbf76a7d719c46b3c2a9b846aa3e2
   - enabled: 1
-    path: Assets/Scenes/Clarification.unity
-    guid: fafc67cfcdc9c1d48be8156b3a64b873
+    path: Assets/Scenes/Choose-game.unity
+    guid: 9e3cc3dd8eced0a4c9576f826bca1766
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 10db095ee6eb5aa47928f00941a33344
   - enabled: 1
+    path: Assets/Scenes/GameScene_Minus.unity
+    guid: baa91df5e10cf124ba98c522e8a60f97
+  - enabled: 1
+    path: Assets/Scenes/GameScene_Multiplication.unity
+    guid: 42bf9a55ab8f0c44d8cbcef94ea686a1
+  - enabled: 1
     path: Assets/Scenes/FinalScene.unity
     guid: 9bd63c8867efd464bba13aa81c1590ac
+  - enabled: 1
+    path: Assets/Scenes/SocialShare.unity
+    guid: 5617eb05bfaf6934bb0986ce30329431
   - enabled: 1
     path: Assets/Scenes/EndGame.unity
     guid: e8547ca06dafe7144b67b77ee5c36abe
@@ -26,6 +35,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Other/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: Assets/Scenes/Clarification.unity
+    guid: fafc67cfcdc9c1d48be8156b3a64b873
   - enabled: 0
     path: Assets/Scenes/Other/SceneGameOver.unity
     guid: 8b439747d60840b4b8f10d30360493f9

@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     int punktyL = 0;
     string punktyL2;
     int level = 1;
-    int szanse = 2;
+    int szanse = 1;
 
     public static int punkty = 0;
     //public int punkty = 0;
@@ -84,12 +84,14 @@ public class GameManager : MonoBehaviour
 
         if (currentTime <= 0)
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(5);
         }
 
 
 
     }
+
+
 
     void SetCurrentQuestion()
     {
@@ -245,7 +247,7 @@ public class GameManager : MonoBehaviour
 
         if (szanse == 0)
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(5);
         }
 
     }

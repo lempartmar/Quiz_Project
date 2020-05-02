@@ -8,6 +8,7 @@ using System.IO;
 public class ShareOnSocialMedia : MonoBehaviour
 {
     [SerializeField] GameObject Panel_share;
+    [SerializeField] GameObject logo;
     [SerializeField] Text txtPanelScore;
     [SerializeField] Text txtHomeScore;
     [SerializeField] Text txtDate;
@@ -16,13 +17,16 @@ public class ShareOnSocialMedia : MonoBehaviour
 
     public void ShareScore()
     {
-        txtPanelScore.text = txtHomeScore.text; //get the same score in home sceen
+        txtPanelScore.text = txtHomeScore.text;
+        
+        //get the same score in home sceen
         DateTime dt = DateTime.Now; //get the current date
 
         txtDate.text = string.Format("{0}/{1}/{2}", dt.Month, dt.Day, dt.Year);
-
+        logo.SetActive(true);
         //open the score panel
         Panel_share.SetActive(true);//show the panel
+
         StartCoroutine("TakeScreenShotAndShare");
     }
 
