@@ -264,8 +264,8 @@ PlayerSettings:
   AndroidTargetArchitectures: 1
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: '{inproject}: Games2.keystore'
-  AndroidKeyaliasName: lampart123
+  AndroidKeystoreName: '{inproject}: korki.keystore'
+  AndroidKeyaliasName: korepetytor123
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
