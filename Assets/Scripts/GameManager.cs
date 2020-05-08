@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
     private Question currentQuestion;
 
 
-    int punktyL = 0;
+    public int punktyL = 0;
     string punktyL2;
     int level = 1;
     int szanse = 1;

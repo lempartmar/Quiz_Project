@@ -1,18 +1,21 @@
 fileFormatVersion: 2
 guid: dbcf5f0282534becbd37af4fe90ae8bb
 labels:
-- gvh_v0.10.08
+- gvh
 - gvh_version-1.2.144
 - gvhp_exportpath-Assets/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.144.dll
-- gvh
+- gvhp_exportpath-Assets\ExternalDependencyManager\Editor\Google.JarResolver_v1.2.144.dll
 - gvhp_targets-editor
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2
   iconMap: {}
   executionOrder: {}
+  defineConstraints: []
   isPreloaded: 0
   isOverridable: 0
+  isExplicitlyReferenced: 0
+  validateReferences: 1
   platformData:
   - first:
       Any: 
@@ -22,7 +25,7 @@ PluginImporter:
   - first:
       Editor: Editor
     second:
-      enabled: 0
+      enabled: 1
       settings:
         DefaultValueInitialized: true
   - first:

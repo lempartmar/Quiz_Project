@@ -1,9 +1,15 @@
-﻿using System.Collections;
+﻿using Assets.Scripts;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class NextScene : MonoBehaviour
 {
+    public void Start()
+    {
+        Leaderboards.Init();
+    }
+
     public void NextScene1()
     {
 
