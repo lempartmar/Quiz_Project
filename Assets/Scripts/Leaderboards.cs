@@ -9,46 +9,81 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    static class Leaderboards
+    public class Leaderboards: MonoBehaviour
     {
-        public static void Init()
+
+        public static Leaderboards Instance;
+
+        private void Awake()
         {
-            PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
+            if (Instance == null) {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+            DontDestroyOnLoad(gameObject);
+        }
+
+        public  void Init()
+        {
 
             // Enable debugging output (recommended)
             PlayGamesPlatform.DebugLogEnabled = true;
 
-            // Initialize and activate the platform
-            PlayGamesPlatform.InitializeInstance(config);
             PlayGamesPlatform.Activate();
-            PlayGamesPlatform.Instance.Authenticate(SignInCallback, true);
+            LogIn();
+
+        }
+        public void LogIn()
+        {
+            Social.localUser.Authenticate((bool success) =>
+            {
+                if (success)
+                {
+                    Debug.Log("Login Sucess");
+                }
+                else
+                {
+                    Debug.Log("Login failed");
+                }
+            });
         }
 
-        private static void SignInCallback(bool success)
+
+
+        public void OnShowLeaderBoard()
         {
-            if (success)
+            //        Social.ShowLeaderboardUI (); // Show all leaderboard
+
+            if (!Social.localUser.authenticated)
             {
-                Debug.Log("(PandaUp) Signed in!");
+                LogIn();
             }
-            else
-            {
-                Debug.Log("(PandaUp) Sign-in failed...");
-            }
+
+                ((PlayGamesPlatform)Social.Active).ShowLeaderboardUI(GPGSIds.leaderboard_highscoretable); // Show current (Active) leaderboard
         }
-
-        public static void ReportScore(int finalScore)
+        /// <summary>
+        /// Adds Score To leader board
+        /// </summary>
+        public void OnAddScoreToLeaderBorad(int score)
         {
-            if (!PlayGamesPlatform.Instance.localUser.authenticated)
+            if (Social.localUser.authenticated)
             {
-                return;
+                Social.ReportScore(score, GPGSIds.leaderboard_highscoretable, (bool success) =>
+                {
+                    if (success)
+                    {
+                        Debug.Log("Update Score Success");
+
+                    }
+                    else
+                    {
+                        Debug.Log("Update Score Fail");
+                    }
+                });
             }
-
-            PlayGamesPlatform.Instance.ReportScore(finalScore, GPGSIds.leaderboard_highscoretable, callback);
-        }
-
-        public static void callback(bool a)
-        {
-            Debug.Log("Stan operacji: " + a);
         }
     }
 }

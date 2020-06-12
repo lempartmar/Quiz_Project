@@ -767,6 +767,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &852963102 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6907540190999371533, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+    type: 3}
+  m_PrefabInstance: {fileID: 6907540190233325587}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &852963104 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6907540190999371571, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+    type: 3}
+  m_PrefabInstance: {fileID: 6907540190233325587}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &872390219
 GameObject:
   m_ObjectHideFlags: 0
@@ -1494,6 +1512,7 @@ RectTransform:
   m_Children:
   - {fileID: 872390220}
   - {fileID: 2030786385}
+  - {fileID: 852963102}
   - {fileID: 475470801}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -1908,7 +1927,7 @@ PrefabInstance:
     - target: {fileID: 1400474976680685944, guid: 8c0fcb58ccf85604992fbbd83256f2c1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1400474976680685944, guid: 8c0fcb58ccf85604992fbbd83256f2c1,
         type: 3}
@@ -2381,97 +2400,184 @@ MonoBehaviour:
   LiczbaPunktowResume: {fileID: 910274801}
   LiczbaLevel: {fileID: 1845959408}
   LiczbaLevelResume: {fileID: 919995255}
+  liczbapytanie: {fileID: 852963104}
   currentTime: 5
   startTime: 8
   isactive: 0
   countdownText: {fileID: 2027590336}
   questions_1:
-  - fact: 1 + 1 = 2
+  - fact: 16 - 2 = 14
     isTrue: 1
-  - fact: 3 + 6 = 9
+  - fact: 18 - 18  = 0
     isTrue: 1
-  - fact: 4 + 1 = 5
-    isTrue: 1
-  - fact: 2 + 4 = 7
+  - fact: 22 - 8 = 10
     isTrue: 0
-  - fact: 3 + 3 = 6
+  - fact: 33 - 9 = 24
     isTrue: 1
-  - fact: 4 + 5 = 9
+  - fact: 15 - 1 = 14
     isTrue: 1
-  - fact: 3 + 3 = 6
+  - fact: 4 - 1 = 3
     isTrue: 1
-  - fact: 2 + 2 = 4
+  - fact: 9 - 7 = 2
     isTrue: 1
+  - fact: 2 - 1 = 2
+    isTrue: 0
   questions_2:
-  - fact: 6 + 6 = 12
+  - fact: 6 - 6 = 0
     isTrue: 1
-  - fact: 7 + 7 = 14
+  - fact: 7 - 1  = 6
     isTrue: 1
-  - fact: 8 + 4 = 12
-    isTrue: 1
-  - fact: 9 + 6 = 15
-    isTrue: 1
-  - fact: 8 + 8 = 16
-    isTrue: 1
-  - fact: 6 + 7 = 13
-    isTrue: 1
-  - fact: 8 + 2 = 11
+  - fact: 16 - 7 = 8
     isTrue: 0
-  - fact: 9 + 9 = 18
-    isTrue: 1
+  - fact: '24 - 3 = 4 '
+    isTrue: 0
+  - fact: 8 - 1 = 5
+    isTrue: 0
+  - fact: 7 - 2 = 4
+    isTrue: 0
+  - fact: '3 - 3 = 1 '
+    isTrue: 0
+  - fact: 9 - 9 = 1
+    isTrue: 0
   questions_3:
-  - fact: 12 + 11 = 23
+  - fact: 16 - 2 = 14
     isTrue: 1
-  - fact: 13 + 13 = 26
+  - fact: 18 - 18  = 0
     isTrue: 1
-  - fact: 14 + 14 = 28
+  - fact: 17 - 5 = 12
     isTrue: 1
-  - fact: 12 + 8 = 20
+  - fact: 22 - 8 = 10
+    isTrue: 0
+  - fact: 33 - 9 = 24
     isTrue: 1
-  - fact: 19 + 11 = 30
+  - fact: 15 - 1 = 14
     isTrue: 1
-  - fact: 16 + 12 = 28
+  - fact: 4 - 1 = 3
     isTrue: 1
-  - fact: 9 + 11 = 20
-    isTrue: 1
-  - fact: 9 + 9 = 17
+  - fact: 9 - 7 = 2
     isTrue: 0
   questions_4:
-  - fact: 22 + 21 = 43
+  - fact: 88 - 16 = 72
     isTrue: 1
-  - fact: 31 + 38 = 70
-    isTrue: 0
-  - fact: 41 + 9 = 51
-    isTrue: 0
-  - fact: 15 + 41 = 57
-    isTrue: 0
-  - fact: 61 + 11 = 80
-    isTrue: 0
-  - fact: 55 + 16 = 90
-    isTrue: 0
-  - fact: 11 + 22 = 33
+  - fact: 88 - 72 = 16
     isTrue: 1
-  - fact: 41 + 11 = 54
-    isTrue: 0
+  - fact: 99 - 31 = 68
+    isTrue: 1
+  - fact: '72 - 16 = 56 '
+    isTrue: 1
+  - fact: 56 - 33 = 23
+    isTrue: 1
+  - fact: 116 - 52 = 64
+    isTrue: 1
+  - fact: 142 - 52 = 90
+    isTrue: 1
+  - fact: 162 - 82 = 80
+    isTrue: 1
   questions_5:
-  - fact: 
+  - fact: 132 -16 = 116
+    isTrue: 1
+  - fact: 182 - 116 = 66
+    isTrue: 1
+  - fact: 162 - 48 = 114
+    isTrue: 1
+  - fact: 182 - 43 = 139
+    isTrue: 1
+  - fact: 174 - 44 = 130
+    isTrue: 1
+  - fact: '114 - 43 = 71 '
+    isTrue: 1
+  - fact: 167 - 153 = 14
+    isTrue: 1
+  - fact: 159 - 14 = 145
+    isTrue: 1
+  questions_6:
+  - fact: 301 - 200 = 101
+    isTrue: 1
+  - fact: 357 - 246 = 111
     isTrue: 0
-  - fact: 
+  - fact: 250 - 150 = 100
     isTrue: 0
-  - fact: 
-    isTrue: 0
-  - fact: 
-    isTrue: 0
-  - fact: 
-    isTrue: 0
-  - fact: 
-    isTrue: 0
-  - fact: 
-    isTrue: 0
-  - fact: 
-    isTrue: 0
-  questions_6: []
+  - fact: '450 - 25 = 425 '
+    isTrue: 1
+  - fact: 465 - 125 = 340
+    isTrue: 1
+  - fact: 147 -113 = 34
+    isTrue: 1
+  - fact: 523 - 123 = 400
+    isTrue: 1
+  - fact: 479 - 249 = 230
+    isTrue: 1
+  questions_7:
+  - fact: 632 - 155 = 477
+    isTrue: 1
+  - fact: 511 - 333 = 178
+    isTrue: 1
+  - fact: 644 - 111 = 533
+    isTrue: 1
+  - fact: 708 - 182 = 526
+    isTrue: 1
+  - fact: 559 - 362 = 197
+    isTrue: 1
+  - fact: 199 - 99 = 100
+    isTrue: 1
+  - fact: 809 - 199 = 610
+    isTrue: 1
+  - fact: 763 - 426 = 337
+    isTrue: 1
+  questions_8:
+  - fact: 910 - 215 = 695
+    isTrue: 1
+  - fact: 533 - 221 = 312
+    isTrue: 1
+  - fact: 989 - 176 = 813
+    isTrue: 1
+  - fact: 401 - 115 = 286
+    isTrue: 1
+  - fact: 999 - 411 = 588
+    isTrue: 1
+  - fact: 332 - 222 = 110
+    isTrue: 1
+  - fact: 213 - 213 = 0
+    isTrue: 1
+  - fact: 1101 - 635 = 466
+    isTrue: 1
+  questions_9:
+  - fact: '1 530 - 546 = 984 '
+    isTrue: 1
+  - fact: 3 256 - 156 = 3 100
+    isTrue: 1
+  - fact: 4268 - 2 365 = 1 903
+    isTrue: 1
+  - fact: 1 125 - 356 = 769
+    isTrue: 1
+  - fact: 1 769 - 523 = 1 246
+    isTrue: 1
+  - fact: 1 963 - 102 = 1 861
+    isTrue: 1
+  - fact: 1 689 - 256 = 1 433
+    isTrue: 1
+  - fact: 1 889 - 126 = 1 763
+    isTrue: 1
+  questions_10:
+  - fact: 4 963 - 2 368 =  2 595
+    isTrue: 1
+  - fact: 9 635 - 4 215 = 5 420
+    isTrue: 1
+  - fact: 8 125 - 4 236 = 3 889
+    isTrue: 1
+  - fact: 4 365 - 4 225 = 140
+    isTrue: 1
+  - fact: 7 865 - 1 235 = 6 630
+    isTrue: 1
+  - fact: 4 987 - 4 236 = 751
+    isTrue: 1
+  - fact: 6 458 - 1 235 = 5 223
+    isTrue: 1
+  - fact: 9 875 - 9 125 = 750
+    isTrue: 1
   PauseMenuUI: {fileID: 1029036739}
+  punktyL: 0
+  liczbapytandowyswietlenia: 0
 --- !u!4 &1577900250
 Transform:
   m_ObjectHideFlags: 0
@@ -2814,7 +2920,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Chances : 2'
+  m_Text: 'Chances : 1'
 --- !u!222 &1929352689
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2934,7 +3040,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 225}
+  m_AnchoredPosition: {x: 0, y: 191}
   m_SizeDelta: {x: 1080, y: 169.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2027590336
@@ -3011,7 +3117,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.60400003}
   m_AnchorMax: {x: 0.5, y: 0.60400003}
-  m_AnchoredPosition: {x: -0.012506, y: -397}
+  m_AnchoredPosition: {x: -0.012506, y: -346}
   m_SizeDelta: {x: 1080, y: 326.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2030786386
@@ -3131,6 +3237,135 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2039601096}
   m_CullTransparentMesh: 0
+--- !u!1001 &6907540190233325587
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1126799978}
+    m_Modifications:
+    - target: {fileID: 6907540190999371533, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907540190999371533, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907540190999371533, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907540190999371533, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907540190999371533, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907540190999371533, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907540190999371533, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907540190999371533, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907540190999371533, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907540190999371533, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907540190999371533, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907540190999371533, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.012506
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907540190999371533, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -461
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907540190999371533, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907540190999371533, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 326.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907540190999371533, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907540190999371533, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.60400003
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907540190999371533, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907540190999371533, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.60400003
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907540190999371533, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907540190999371533, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907540190999371534, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+        type: 3}
+      propertyPath: m_Name
+      value: QuestionNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907540190999371571, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907540190999371571, guid: 8ef1af2f68e78bc40b886eecf92332ca,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8ef1af2f68e78bc40b886eecf92332ca, type: 3}
 --- !u!1001 &7952645972842059627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3196,12 +3431,12 @@ PrefabInstance:
     - target: {fileID: 1331534657038162975, guid: c15c3eeb282418f4cb48c990e378da0d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 763
+      value: 744
       objectReference: {fileID: 0}
     - target: {fileID: 1331534657038162975, guid: c15c3eeb282418f4cb48c990e378da0d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 970.2
+      value: 965
       objectReference: {fileID: 0}
     - target: {fileID: 1331534657038162975, guid: c15c3eeb282418f4cb48c990e378da0d,
         type: 3}

@@ -12,9 +12,13 @@ public class ManagerScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        
         Counter = GameManager.punkty;
+        Debug.Log(Counter);
         Instance = this;
-        Leaderboards.ReportScore(GameManager.punkty);
+        //Leaderboards.Instance.ReportScore(GameManager.punkty);
+        Leaderboards.Instance.OnAddScoreToLeaderBorad(GameManager.punkty);
+        PlayGameScript3.AddScoreToLeaderboard(GPGSIds.leaderboard_highscoretable, Counter);
     }
 
     public void RestartGame()
@@ -24,4 +28,9 @@ public class ManagerScript : MonoBehaviour
 
     }
 
+    public void ShowScores()
+    {
+        RestartGame();
+        Leaderboards.Instance.OnShowLeaderBoard();
+    }
 }

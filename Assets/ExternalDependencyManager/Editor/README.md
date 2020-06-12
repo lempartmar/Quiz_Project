@@ -11,7 +11,7 @@ Unity plugin that requires:
      [AARs](https://developer.android.com/studio/projects/android-library.html)).
    * iOS [CocoaPods](https://cocoapods.org/).
    * Version management of transitive dependencies.
-   * Management of Unity Package Manager Registries.
+   * Management of Unity Package Manager (UPM) Registries.
 
 Updated releases are available on
 [GitHub](https://github.com/googlesamples/unity-jar-resolver)
@@ -77,7 +77,7 @@ hosting and provides ways to discover, install, upgrade and uninstall packages.
 This makes it easier for developers to manage plugins within their projects.
 
 However, installing additional package registries requires a few manual steps
-that can potentially be error prone.  The *Unity Package Manager Resolver*
+that can potentially be error prone.  The *Package Manager Resolver*
 component of this plugin integrates with
 [UPM](https://docs.unity3d.com/Manual/Packages.html) to provide a way to
 auto-install UPM package registries when a `.unitypackage` is installed which
@@ -132,7 +132,7 @@ with Unity version 4.6.8 or higher.
 The *Version Handler* component only works with Unity 5.x or higher as it
 depends upon the `PluginImporter` UnityEditor API.
 
-The *Unity Package Manager Resolver* component only works with
+The *Package Manager Resolver* component only works with
 Unity 2018.4 or above, when
 [scoped registry](https://docs.unity3d.com/Manual/upm-scoped.html)
 support was added to the Unity Package Manager.
@@ -456,11 +456,11 @@ private static void PostProcessBuild_iOS(BuildTarget target, string buildPath)
 }
 ```
 
-# Unity Package Manager Resolver Usage
+# Package Manager Resolver Usage
 
 Adding registries to the
 [Unity Package Manager](https://docs.unity3d.com/Manual/Packages.html)
-(UPM) is a manual process. The Unity Package Manager Resolver (UPMR) component
+(UPM) is a manual process. The Package Manager Resolver (PMR) component
 of this plugin makes it easy for plugin maintainers to distribute new UPM
 registry servers and easy for plugin users to manage UPM registry servers.
 
@@ -497,7 +497,7 @@ For example, to add a registry for plugins in the scope `com.coolstuff`:
 </registries>
 ```
 
-When UPMR is loaded it will prompt the developer to add the registry to their
+When PMR is loaded it will prompt the developer to add the registry to their
 project if it isn't already present in the `Packages/manifest.json` file.
 
 For more information, see Unity's documentation on
@@ -505,23 +505,52 @@ For more information, see Unity's documentation on
 
 ## Managing Registries
 
-It's possible to add and remove registries that are specified via UPMR
+It's possible to add and remove registries that are specified via PMR
 XML configuration files via the following menu options:
 
-* `Assets > External Dependency Manager > Unity Package Manager Resolver >
+* `Assets > External Dependency Manager > Package Manager Resolver >
   Add Registries` will prompt the user with a window which allows them to
   add registries discovered in the project to the Unity Package Manager.
-* `Assets > External Dependency Manager > Unity Package Manager Resolver >
+* `Assets > External Dependency Manager > Package Manager Resolver >
   Remove Registries` will prompt the user with a window which allows them to
   remove registries discovered in the project from the Unity Package Manager.
-* `Assets > External Dependency Manager > Unity Package Manager Resolver >
+* `Assets > External Dependency Manager > Package Manager Resolver >
   Modify Registries` will prompt the user with a window which allows them to
   add or remove registries discovered in the project.
 
+## Migration
+
+PMR can migrate Version Handler packages installed in the `Assets` folder
+to UPM packages. This requires the plugins to implement the following:
+
+* `.unitypackage` must include a Version Handler manifests that describes
+   the components of the plugin. If the plugin has no dependencies
+   the manifest would just include the files in the plugin.
+* The UPM package JSON provided by the registry must include a keyword
+  (in the `versions.VERSION.keyword` list) that maps the UPM package
+  to a Version Handler package using the format
+  `vh-name:VERSION_HANDLER_MANIFEST_NAME` where `VERSION_HANDLER_MANIFEST_NAME`
+  is the name of the manifest defined in the `.unitypackage`.  For
+  more information see the description of the `gvhp_manifestname` asset label
+  in the *Version Handler Usage* section.
+
+When using the `Assets > External Dependency Manager >
+Package Manager Resolver > Migrate Packages` menu option, PMR then
+will:
+
+* List all Version Handler manager packages in the project.
+* Search all available packages in the UPM registries and fetch keywords
+  associated with each package parsing the Version Handler manifest names
+  for each package.
+* Map each installed Version Handler package to a UPM package.
+* Prompt the user to migrate the discovered packages.
+* Perform package migration for all selected packages if the user clicks
+  the `Apply` button.
+
 ## Configuration
 
-UPMR can be configured via the `Assets > External Dependency Manager >
-Unity Package Manager Resolver > Settings` menu option:
+PMR can be configured via the `Assets > External Dependency Manager >
+Package Manager Resolver > Settings` menu option:
 
 * `Add package registries` when enabled, when the plugin loads or registry
   configuration files change, this will prompt the user to add registries
@@ -529,6 +558,9 @@ Unity Package Manager Resolver > Settings` menu option:
 * `Prompt to add package registries` will cause a developer to be prompted
   with a window that will ask for confirmation before adding registries.
   When this is disabled registries are added silently to the project.
+* `Prompt to migrate packages` will cause a developer to be prompted
+  with a window that will ask for confirmation before migrating packages
+  installed in the `Assets` directory to UPM packages.
 * `Enable Analytics Reporting` when enabled, reports the use of the plugin
   to the developers so they can make imrpovements.
 * `Verbose logging` when enabled prints debug information to the console
@@ -706,7 +738,7 @@ need to do the following:
    * Bump the plugin version variable `pluginVersion` in `build.gradle`
    * Update `CHANGELOG.md` with the new version number and changes included in
      the release.
-   * Build the release using `./gradle release` which performs the following:
+   * Build the release using `./gradlew release` which performs the following:
       * Updates `external-dependency-manager-*.unitypackage`
       * Copies the unpacked plugin to the `exploded` directory.
       * Updates template metadata files in the `plugin` directory.
@@ -715,9 +747,9 @@ need to do the following:
         versions of the plugin to be imported into a Unity project which allows
         the most recent version to be activated by the Version Handler
         component.
-   * Create the release commit and tag the release using
-     `./gradle gitTagRelease` which performs the following:
-     * `git add -A` to pick up all modified, new and deleted files in the tree.
-     * `git commit --amend -a` to create a release commit with the release notes
-       in the change log.
-     * `git tag -a RELEASE -m "version RELEASE"` to tag the release.
+   * Create release commit using `./gradlew gitCreateReleaseCommit` which
+     performs `git commit -a -m "description from CHANGELOG.md"`
+   * Once the release commit is merge, tag the release using
+     `./gradlew gitTagRelease` which performs the following:
+     * `git tag -a pluginVersion -m "version RELEASE"` to tag the release.
+   * Update tags on remote branch using `git push --tag REMOTE HEAD:master`

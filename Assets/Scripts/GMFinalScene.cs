@@ -13,9 +13,10 @@ public class GMFinalScene : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        
         // punktydotekstu = GetComponent<Text>();
         punktydowyswietlenia = GameManager.punkty;
+        
         Debug.Log(punktydowyswietlenia);
     }
 
@@ -33,4 +34,5 @@ public class GMFinalScene : MonoBehaviour
             OpisPunktow.text = "Amazing Work!";
         }
     }
+
 }

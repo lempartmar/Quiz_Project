@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public Text LiczbaPunktowResume;
     public Text LiczbaLevel;
     public Text LiczbaLevelResume;
+    public Text liczbapytanie;
 
     public float currentTime = 0f;
     public float startTime;
@@ -33,6 +34,10 @@ public class GameManager : MonoBehaviour
     public Question[] questions_4;
     public Question[] questions_5;
     public Question[] questions_6;
+    public Question[] questions_7;
+    public Question[] questions_8;
+    public Question[] questions_9;
+    public Question[] questions_10;
 
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
@@ -42,6 +47,7 @@ public class GameManager : MonoBehaviour
 
 
     public int punktyL = 0;
+    public int liczbapytandowyswietlenia;
     string punktyL2;
     int level = 1;
     int szanse = 1;
@@ -63,6 +69,8 @@ public class GameManager : MonoBehaviour
         currentTime = startTime;
         Reset();
 
+        LiczbaPunktow.text = "Points: 0";
+
 
 
         Debug.Log("Liczba szans to: " + szanse);
@@ -81,6 +89,8 @@ public class GameManager : MonoBehaviour
         isactive = false;
         currentTime -= 1 * Time.deltaTime;
         countdownText.text = currentTime.ToString("0.0");
+        liczbapytandowyswietlenia = punktyL + 1;
+        liczbapytanie.text = "Question: " + liczbapytandowyswietlenia.ToString("0");
 
         if (currentTime <= 0)
         {
@@ -148,6 +158,62 @@ public class GameManager : MonoBehaviour
             LiczbaLevel.text = "Level: " + level.ToString();
             LiczbaLevelResume.text = "Level: " + level.ToString();
         }
+
+        else if (level == 6)
+        {
+            currentQuestion = questions_6[randomQuestionIndex];
+            // Debug.Log("pytanie: " + currentQuestion.fact);
+            factText.text = currentQuestion.fact;
+            LiczbaPunktow.text = "Points: " + punkty.ToString();
+            LiczbaPunktowResume.text = "Points: " + punkty.ToString();
+            LiczbaLevel.text = "Level: " + level.ToString();
+            LiczbaLevelResume.text = "Level: " + level.ToString();
+        }
+
+        else if (level == 7)
+        {
+            currentQuestion = questions_7[randomQuestionIndex];
+            // Debug.Log("pytanie: " + currentQuestion.fact);
+            factText.text = currentQuestion.fact;
+            LiczbaPunktow.text = "Points: " + punkty.ToString();
+            LiczbaPunktowResume.text = "Points: " + punkty.ToString();
+            LiczbaLevel.text = "Level: " + level.ToString();
+            LiczbaLevelResume.text = "Level: " + level.ToString();
+        }
+
+        else if (level == 8)
+        {
+            currentQuestion = questions_8[randomQuestionIndex];
+            // Debug.Log("pytanie: " + currentQuestion.fact);
+            factText.text = currentQuestion.fact;
+            LiczbaPunktow.text = "Points: " + punkty.ToString();
+            LiczbaPunktowResume.text = "Points: " + punkty.ToString();
+            LiczbaLevel.text = "Level: " + level.ToString();
+            LiczbaLevelResume.text = "Level: " + level.ToString();
+        }
+
+        else if (level == 9)
+        {
+            currentQuestion = questions_9[randomQuestionIndex];
+            // Debug.Log("pytanie: " + currentQuestion.fact);
+            factText.text = currentQuestion.fact;
+            LiczbaPunktow.text = "Points: " + punkty.ToString();
+            LiczbaPunktowResume.text = "Points: " + punkty.ToString();
+            LiczbaLevel.text = "Level: " + level.ToString();
+            LiczbaLevelResume.text = "Level: " + level.ToString();
+        }
+
+        else if (level == 10)
+        {
+            currentQuestion = questions_10[randomQuestionIndex];
+            // Debug.Log("pytanie: " + currentQuestion.fact);
+            factText.text = currentQuestion.fact;
+            LiczbaPunktow.text = "Points: " + punkty.ToString();
+            LiczbaPunktowResume.text = "Points: " + punkty.ToString();
+            LiczbaLevel.text = "Level: " + level.ToString();
+            LiczbaLevelResume.text = "Level: " + level.ToString();
+        }
+
     }
 
     public void DodawaniePunktowdoLeveli()
@@ -191,6 +257,29 @@ public class GameManager : MonoBehaviour
         {
             level++;
             PojawienieEkranuPrzerwy();
+        }
+        else if (punktyL == 56)
+        {
+            level++;
+            PojawienieEkranuPrzerwy();
+        }
+        else if (punktyL == 63)
+        {
+            level++;
+            PojawienieEkranuPrzerwy();
+        }
+
+        else if (punktyL == 70)
+        {
+            level++;
+            PojawienieEkranuPrzerwy();
+        }
+
+        else if (punktyL == 77)
+        {
+         
+            PojawienieEkranuPrzerwy();
+            SceneManager.LoadScene(5);
         }
         Debug.Log("Level gry: " + level);
         SetCurrentQuestion();
@@ -291,11 +380,5 @@ public class GameManager : MonoBehaviour
 
 
     }
-
-
-
-
-
-
-
+   
 }

@@ -7,7 +7,8 @@ public class NextScene : MonoBehaviour
 {
     public void Start()
     {
-        Leaderboards.Init();
+        Leaderboards.Instance.Init();
+        RestartGame2();
     }
 
     public void NextScene1()
@@ -93,6 +94,18 @@ public class NextScene : MonoBehaviour
         int szanse = 2;
         int punkty = 0;
     
+    }
+
+    public void RestartGame2()
+    {
+
+     
+        int punktyL = 0;
+        string punktyL2;
+        int level = 1;
+        int szanse = 2;
+        int punkty = 0;
+
     }
 
 }
